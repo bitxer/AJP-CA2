@@ -1,17 +1,28 @@
-import java.util.HashSet;
+import java.util.concurrent.BlockingQueue;
 
 public class Handler extends Thread{
     private Reader READER;
-    private HashSet<Site> SITES;
+    private BlockingQueue<String> SITES;
 
-    public Handler(Reader reader, HashSet<Site> sites){
+    public Handler(Reader reader, BlockingQueue<String> sites){
         READER = reader;
         SITES = sites;
     }
 
     public void run(){
-        synchronized (SITES){
-            READER.read();
+        int counter = 0;
+        for (String i : READER.read()){
+            counter += 1;
+            try {
+                SITES.put(i);
+                if (counter == 12){
+                    return;
+                }
+                sleep(10);
+            } catch (InterruptedException e) {
+                return;
+            }
+
         }
     }
 }

@@ -1,4 +1,6 @@
-public class Site {
+import java.io.Serializable;
+
+public class Site implements Serializable {
     private String URL;
     private String SRC;
 

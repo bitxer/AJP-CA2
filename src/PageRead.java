@@ -1,6 +1,7 @@
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,11 +10,15 @@ public class PageRead {
         try {
             System.setProperty("http.agent", "Mozilla/5.0");
             URL url = new URL(pageAddr);
- 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            BufferedReader reader = null;
+            StringBuilder sb = new StringBuilder();
+            try {
+                reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            } catch (IOException e) {
+                return sb;
+            }
           
             String line;
-            StringBuilder sb=new StringBuilder();
             while ((line = reader.readLine()) != null) {
                 sb.append(line+"\n");
             }
@@ -30,20 +35,26 @@ public class PageRead {
         }
     }
 
-    public static int getLinks(String pageAddr){
-        return getLinks(pageAddr, "href=\"(?<href>[\\.A-Za-z0-9/?~!@#$%^&*()_+`\\-=\\[\\]\\{}|;':\",./?]+)\"");
+    public static ArrayList<String> getLinks(String pageAddr){
+        return getLinks(pageAddr, "href=\"(?<link>[\\.A-Za-z0-9/?~!@#$%^&*\\(\\)_+`\\-=\\[\\]\\{}|;':\",./?]+)\"");
     }
 
-    public static int getLinks(String pageAddr, String pattern){
+    public static ArrayList<String> getLinks(String pageAddr, String pattern){
         String html = readPage(pageAddr).toString();
-        //System.out.println(html);
-
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(html);
+        ArrayList<String> links = new ArrayList<>();
         while (m.find()) {
-            System.out.println(m.group("href"));
+            String link = m.group("link");
+            if (links.contains(link))
+                continue;
+            links.add(m.group("link"));
         }
 
-        return 1;
+        return links;
+    }
+
+    public static String getSrc(String url){
+        return readPage(url).toString();
     }
 }
