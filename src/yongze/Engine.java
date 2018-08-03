@@ -1,3 +1,5 @@
+package yongze;
+
 public enum Engine {
     GOOGLE("https://www.google.com/search?q=");
     private String SEARCHQUERY;

@@ -1,3 +1,5 @@
+package yongze;
+
 import java.util.concurrent.BlockingQueue;
 
 public class Handler extends Thread{
