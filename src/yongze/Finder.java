@@ -2,7 +2,7 @@ package yongze;
 
 import java.util.concurrent.BlockingQueue;
 
-public class Handler extends Thread{
+public class Finder extends Thread{
     private Reader READER;
     private BlockingQueue<String> SITES;
 

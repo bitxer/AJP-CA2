@@ -11,7 +11,7 @@ public class Crawler {
 
         BlockingQueue<String> sites = new ArrayBlockingQueue<>(20);
         Reader reader = new Reader(Engine.GOOGLE, search);
-        Handler findLinks = new Handler(reader, sites);
+        Finder findLinks = new Finder(reader, sites);
         findLinks.start();
 
         for (;;){
@@ -22,6 +22,25 @@ public class Crawler {
             new GetSrc(s).start();
         }
 
+    }
+
+    private static void showSites(String[] sites) {
+        JDialog dialog = null;
+        JOptionPane optionPane = new JOptionPane();
+        optionPane.setMessage("Available Sites");
+        optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(12, 1));
+        JButton[] buttons = new JButton[sites.length];
+        for (int i = 0; i < sites.length; i++) {
+            buttons[i] = new JButton(sites[i]);
+            panel.add(buttons[i]);
+        }
+        optionPane.setOptionType(JOptionPane.DEFAULT_OPTION);
+        optionPane.add(panel);
+        dialog = optionPane.createDialog(null, "Icon/Text Button");
+        dialog.setVisible(true);
     }
 }
 
