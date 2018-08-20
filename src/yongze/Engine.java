@@ -9,6 +9,10 @@ public enum Engine {
     }
 
     public String getSearchQuery(String search){
-        return SEARCHQUERY + search;
+        return SEARCHQUERY + search.replaceAll(" ", "%20");
     }
+    public String getSearchQuery(String search, int page){
+        return SEARCHQUERY + search.replaceAll(" ", "%20") + "&start=" + ((page-1)*10);
+    }
+    
 }

@@ -1,4 +1,5 @@
 package yongze;
+
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -16,6 +17,7 @@ public class PageRead {
             try {
                 reader = new BufferedReader(new InputStreamReader(url.openStream()));
             } catch (IOException e) {
+                e.printStackTrace();
                 return sb;
             }
           
