@@ -17,4 +17,4 @@ Your simplified web crawler application is required to provide the following fun
 9. Keep track of the number of occurrences of the search phrase within the html page and display the number of occurrences.
 
 ## License/Copyright
-This repository contains the source code, in fulfilment, for the module ST0316, Advanced Java Programming. As such, this project will not be maintained and all rights belong to the project contributors as well as to Singapore Polytechnic. Third party resources may be reused in accordance to their license and/or terms and conditions.
+This repository contains the source code, in fulfilment, for CA2 of the module ST0316, Advanced Java Programming. As such, this project will not be maintained and all rights belongs to the project contributors as well as to Singapore Polytechnic. Third party resources may be reused in accordance to their license and/or terms and conditions.
