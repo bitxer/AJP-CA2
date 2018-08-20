@@ -3,9 +3,8 @@
 ## Task
 In assignment 2, you will code and implement a simplified crawler which will help you retrieve web documents from the internet based on a search phrase.<br>
 From Wikipedia:
-```
-A Web crawler starts with a list of URLs to visit, called the seeds. As the crawler visits these URLs, it identifies all the hyperlinks in the page and adds them to the list of URLs to visit, called the crawl frontier. URLs from the frontier are recursively visited according to a set of policies. If the crawler is performing archiving of websites it copies and saves the information as it goes. Such archives are usually stored such that they can be viewed, read and navigated as they were on the live web, but are preserved as ‘snapshots'.
-```
+>A Web crawler starts with a list of URLs to visit, called the seeds. As the crawler visits these URLs, it identifies all the hyperlinks in the page and adds them to the list of URLs to visit, called the crawl frontier. URLs from the frontier are recursively visited according to a set of policies. If the crawler is performing archiving of websites it copies and saves the information as it goes. Such archives are usually stored such that they can be viewed, read and navigated as they were on the live web, but are preserved as ‘snapshots'.
+
 Your simplified web crawler application is required to provide the following functionalities:
 1. Enable user to enter a search phrase which may contain more than one word.
 2. Send the query to two search engines of your choice such as yahoo or bing.
