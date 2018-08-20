@@ -1,4 +1,4 @@
-package yongze;
+package ajpca2;
 
 import java.io.*;
 import java.net.MalformedURLException;

@@ -1,4 +1,4 @@
-package yongze;
+package ajpca2;
 
 public enum Engine {
     GOOGLE("https://www.google.com/search?q=");

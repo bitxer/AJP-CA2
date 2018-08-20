@@ -1,4 +1,4 @@
-package yongze;
+package ajpca2;
 
 import javax.swing.JFrame;
 
