@@ -7,10 +7,6 @@ import java.io.ObjectInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Yong Ze
- */
 public class ResultsUI extends javax.swing.JFrame {
 
     /**
