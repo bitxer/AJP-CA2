@@ -9,7 +9,7 @@ Your simplified web crawler application is required to provide the following fun
 1. Enable user to enter a search phrase which may contain more than one word.
 2. Send the query to two search engines of your choice such as yahoo or bing.
 3. Program will need to analyze the downloaded html source from the first 2 search results from each search engine. This will form the seeds.
-4. Program will need to analyze the downloaded html source from the seeds to find out the top 12 unique webpages through multi-threading. Your pool of urls will grow from analyzing of web content starting from the seeds You would have to look for the specific patterns to retrieve the web site address eg  http://....  as a pattern. You will need to apply suitable regular expressions to find such patterns.
+4. Program will need to analyze the downloaded html source from the seeds to find out the top 12 unique webpages through multi-threading. Your pool of urls will grow from analyzing of web content starting from the seeds You would have to look for the specific patterns to retrieve the web site address eg `http://....`  as a pattern. You will need to apply suitable regular expressions to find such patterns.
 5. Your application will create 2 separate threads which will download and process each web document to find the web URLs, which will be added to the Queue.
 6. Each of these 12 webpages URLs will be queued to a Queue data structure as they are found.
 7. The 2 threads will process the next available and unprocessed web URL once it has finished its current task. They will keep doing so, until the 12 websites are found with its contents downloaded.
